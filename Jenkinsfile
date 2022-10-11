@@ -1,6 +1,6 @@
 node{
    stage('SCM Checkout'){
-     git 'https://github.com/damodaranj/my-app.git'
+     git 'http://github.com/Rammarx/my-app.git'
    }
    stage('Compile-Package'){
 
@@ -24,9 +24,9 @@ node{
    sh 'docker push rammarx/myweb:0.0.2'
    }
    stage('Nexus Image Push'){
-   sh "docker login -u admin -p admin123 3.109.55.142:8083"
-   sh "docker tag rammarx/myweb:0.0.2 3.109.55.142:8083/damo:1.0.0"
-   sh 'docker push 3.109.55.142:8083/damo:1.0.0'
+   sh "docker login -u admin -p admin123 3.109.2.112:8083"
+   sh "docker tag rammarx/myweb:0.0.2 3.109.2.112:8083/damo:1.0.0"
+   sh 'docker push 3.109.2.112:8083/damo:1.0.0'
    }
    stage('Remove Previous Container'){
 	try{
