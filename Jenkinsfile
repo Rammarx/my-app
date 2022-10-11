@@ -19,7 +19,7 @@ node{
    }
    stage('Docker Image Push'){
    withCredentials([string(credentialsId: 'dockerPass', variable: 'dockerPassword')]) {
-   sh "docker logi -u rammarx -p ${dockerPassword}"
+   sh "docker login -u ramma -p ${dockerPassword}"
     }
    sh 'docker push rammarx/myweb:0.0.2'
    }
