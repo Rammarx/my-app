@@ -17,7 +17,7 @@ node{
    stage('Build Docker Imager'){
    sh 'docker build -t rammarx/myweb:0.0.2 .'
    }
-   stage('Docker Image Push'){
+   stage('Docker Image Puh'){
    withCredentials([string(credentialsId: 'dockerPass', variable: 'dockerPassword')]) {
    sh "docker login -u rammarx -p ${dockerPassword}"
     }
